@@ -1,0 +1,42 @@
+input {
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-width: 0px;
+}
+.card {
+  box-shadow: 0px 5px 5px -2px grey;
+}
+nav {
+    box-shadow: 0px 1px 5px #888888;
+}
+
+nav > * {
+    line-height: 1.2 !important;
+}
+
+.nav-link.active {
+    box-shadow: 0 4px 6px -7px #888;
+}
+
+@keyframes sacudir {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.animar-error {
+    animation: sacudir 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}

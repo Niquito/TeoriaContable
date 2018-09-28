@@ -1,0 +1,140 @@
+<html>
+<head>
+	<title></title>
+
+    <meta charset="ISO-8859-1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+	<nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
+		<div id="tituloPagina">
+            <a href="../index.html" class="navbar-brand mr-0">Teoría contable</a>
+            <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Ejercicio 1.14</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Proximo.html">Próximamente</a>
+                    </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="app" class="container-fluid">
+    	<div class="row">
+    		<div class="col text-center">
+    			<br>
+        		<table class="table table-bordered table-striped">
+        		<thead class="text-center">
+        			<tr>
+                        <th rowspan="2">Recursos utilizados en</th>
+                        <th colspan="4" class="text-center">Interesa a la contabilidad</th>
+        			</tr>
+        			<tr>
+        				<td>Socio-ambiental</td>
+        				<td>Financiera o Patrimonial</td>
+        				<td>Gestión</td>
+        				<td>Gubernamental</td>
+        			</tr>
+        		</thead>
+        		<tbody class="casos">
+                    <transition name="fade">
+                    <tr v-for="caso in casos">
+                        <td>{{caso.descripcion}}</td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.socioAmbiental"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.financiera"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.gestion"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.gubernamental"></td>
+                    </tr>
+                    </transition>
+        		</tbody>
+        		</table>
+        		<button type="button" name="button" @click="siguienteCaso" class="btn btn-outline-primary">Siguiente</button>
+        	</div>
+        </div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../enunciados/c1e12.json"></script>
+    <script>
+        function mostrarDropdown() {
+            document.getElementById("dropdownCap1").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+
+    	function generarCasoRandom(){
+
+            var obj_keys = Object.keys(enunciados);
+            var k =  obj_keys[Math.floor(Math.random() *obj_keys.length)];
+            return enunciados[k];
+
+    	}
+
+    	new Vue({
+    	  el: '#app',
+    	  data () {
+    	        return {
+    	          i:0,
+    	          descripcion:'',
+    	          casos: []
+    	        }
+    	      },
+    	      methods:{
+    	        siguienteCaso(){
+
+                    var error = false;
+                    var inputs = document.getElementsByTagName('input');
+                    for(var i = 0; i < inputs.length; i++) {
+                    	if (inputs[i].checked.toString() != inputs[i].dataset.respuesta){
+                    		error = true;
+                    	}
+                    }
+
+                    if (!error){
+                    	const caso = generarCasoRandom();
+                        this.i++;
+                        this.casos.push(caso);
+                    } else {
+                        var tabla = document.getElementsByTagName('table');//
+                        tabla[0].classList.add("animar-error");
+
+                        tabla[0].addEventListener("animationend", (e) => {
+                            tabla[0].classList.remove("animar-error");
+                        });
+                    }
+                    error = false;
+    	        },
+    	        removerCaso(caso) {
+    	            this.casos.splice(this.casos.indexOf(caso),1);
+    	            this.i--;
+    	        }
+    	      }
+    	})
+	</script>
+</body>
+</html>

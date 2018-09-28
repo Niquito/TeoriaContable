@@ -1,0 +1,11 @@
+enunciados = [
+	{ "descripcion":"Capacitación de personal", "socioAmbiental": "true", "financiera": "true", "gestion": "true", "gubernamental": "true" },
+	{ "descripcion":"Compra de materia prima", "socioAmbiental": "false", "financiera": "true", "gestion": "true", "gubernamental": "false" },
+	{ "descripcion":"Pago de impuestos", "socioAmbiental": "false", "financiera": "true", "gestion": "true", "gubernamental": "true" },{ "descripcion":"Mantenimiento de edificios", "socioAmbiental": "false", "financiera": "true", "gestion": "true", "gubernamental": "false" },
+	{ "descripcion":"Disposicion de fluentes industriales", "socioAmbiental": "true", "financiera": "true", "gestion": "true", "gubernamental": "true" },
+	{ "descripcion":"Compra de elementos de seguridad", "socioAmbiental": "true", "financiera": "true", "gestion": "true", "gubernamental": "true" },
+	{ "descripcion":"Colocación de excedentes financieros en inversiones transitorias", "socioAmbiental": "false", "financiera": "true", "gestion": "true", "gubernamental": "true" },
+	{ "descripcion":"Reemplazo de tecnologías contaminantes por tecnologías limpias", "socioAmbiental": "true", "financiera": "true", "gestion": "true", "gubernamental": "true" },
+	{ "descripcion":"Honorarios de los asesores legales", "socioAmbiental": "false", "financiera": "true", "gestion": "true", "gubernamental": "false" },
+	{ "descripcion":"Apoyo a ONG de su área de influencia en temas socio ambientales", "socioAmbiental": "true", "financiera": "true", "gestion": "true", "gubernamental": "false" }
+];
