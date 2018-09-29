@@ -1,0 +1,23 @@
+enunciados = [
+	{ "descripcion":"Tres personas se presentan antes un escribano y manifiestas su deseo de constituir una sociedad anónima. Se labra un contrato", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Las mismas tres personas designan a un administrador de la sociedad", "acto": "false", "reflejado": "false"},
+	{ "descripcion":"Las mismas personas entregan al administrador las sumas de dinero que se comprometieron a aportar a la Sociedad", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"El administrador compra un auto para regalárselo a su esposa", "acto": "true", "reflejado": "false"},
+	{ "descripcion":"El administrador abre una cuenta corriente bancaria a nombre de la sociedad", "acto": "false", "reflejado": "false"},
+	{ "descripcion":"El administrador deposita el dinero de la sociedad en la cuenta corriente bancaria", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"El administrador firma un contrato de alquiler para las oficinas de la sociedad abonando varios meses por edelantado", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se compran mercaderías al contado para revender", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se venden mercaderías al contado", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se contrata a un vendedor", "acto": "false", "reflejado": "false"},
+	{ "descripcion":"Se solicita un préstamo a una Entidad Financiera, recibiéndolo a los 15 días", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se liquida el sueldo del vendedor (no se paga)", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se liquidan las cargas sociales (no se pagan)", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se recibe la factura de luz del local", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se abona el alquiler del mes", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se abonan los sueldos mediante depósito bancario", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se venden mercaderías en cuenta corriente a 60 días", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se cobra en efectivo la venta realizada en cuenta corriente", "acto": "true", "reflejado": "true"},
+	{ "descripcion":"Se coloca una orden de compra por mercadería para su reventa", "acto": "false", "reflejado": "false"},
+	{ "descripcion":"Se retira dinero del banco para hacer pagos menores", "acto": "true", "reflejado": "true"}
+	
+];

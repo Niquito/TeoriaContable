@@ -21,15 +21,15 @@
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Cap 1: Ej 12</a>
+                        <a class="nav-link" href="c1e12">Cap 1: Ej 12</a>
                     </li>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Cap 2
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="c2e5.html">Ej 5</a>
+                      <a class="dropdown-item" href="#">Ej 5</a>
                       <a class="dropdown-item" href="#">Ej 6</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Ej 7</a>
@@ -50,23 +50,16 @@
         		<table class="table table-bordered table-striped table-responsive-sm table-sm">
         		<thead class="text-center">
         			<tr>
-                        <th rowspan="2">Recursos utilizados en</th>
-                        <th colspan="4" class="text-center">Interesa a la contabilidad</th>
-        			</tr>
-        			<tr>
-        				<td>Socio-ambiental</td>
-        				<td>Financiera o Patrimonial</td>
-        				<td>Gestión</td>
-        				<td>Gubernamental</td>
+        				<td>Descripcion de la operación</td>
+        				<td>¿Es un acto económico o financiero?</td>
+        				<td>¿Debe ser reflejado por la contabilidad?</td>
         			</tr>
         		</thead>
         		<tbody class="casos">
                     <tr v-for="caso in casos">
                         <td>{{caso.descripcion}}</td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.socioAmbiental"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.financiera"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.gestion"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.gubernamental"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.acto"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.reflejado"></td>
                     </tr>
         		</tbody>
         		</table>
@@ -78,14 +71,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="../enunciados/c1e12.json"></script>
+    <script src="../enunciados/c2e5.json"></script>
     <script>
 
-    	function generarCasoRandom(){
+        var contador = 0;
 
-            var obj_keys = Object.keys(enunciados);
-            var k =  obj_keys[Math.floor(Math.random() *obj_keys.length)];
-            return enunciados[k];
+    	function generarCaso(){
+
+            return enunciados[(contador < enunciados.length) ? (contador++) : (contador = 0)];
 
     	}
 
@@ -110,11 +103,11 @@
                     }
 
                     if (!error){
-                    	const caso = generarCasoRandom();
+                    	const caso = generarCaso();
                         this.i++;
                         this.casos.push(caso);
                     } else {
-                        var tabla = document.getElementsByTagName('table');//
+                        var tabla = document.getElementsByTagName('table');
                         tabla[0].classList.add("animar-error");
 
                         tabla[0].addEventListener("animationend", (e) => {
