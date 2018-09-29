@@ -2,7 +2,7 @@
 <head>
 	<title></title>
 
-    <meta charset="ISO-8859-1"/>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,7 @@
 <body>
 	<nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
 		<div id="tituloPagina">
-            <a href="../index.html" class="navbar-brand mr-0">Teoría contable</a>
+            <a href="../index.html" class="navbar-brand mr-0">TeorÃ­a contable</a>
             <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +26,7 @@
                 </li>
                 <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link" href="Proximo.html">Próximamente</a>
+                        <a class="nav-link" href="Proximo.html">PrÃ³ximamente</a>
                     </li>
                 </li>
             </ul>
@@ -45,12 +45,11 @@
         			<tr>
         				<td>Socio-ambiental</td>
         				<td>Financiera o Patrimonial</td>
-        				<td>Gestión</td>
+        				<td>GestiÃ³n</td>
         				<td>Gubernamental</td>
         			</tr>
         		</thead>
-        		<tbody class="casos">
-                    <transition name="fade">
+        		<tbody class="casos" name="fade" is="transition-group">
                     <tr v-for="caso in casos">
                         <td>{{caso.descripcion}}</td>
                         <td><input type="checkbox" v-bind:data-respuesta="caso.socioAmbiental"></td>
@@ -58,14 +57,15 @@
                         <td><input type="checkbox" v-bind:data-respuesta="caso.gestion"></td>
                         <td><input type="checkbox" v-bind:data-respuesta="caso.gubernamental"></td>
                     </tr>
-                    </transition>
         		</tbody>
         		</table>
         		<button type="button" name="button" @click="siguienteCaso" class="btn btn-outline-primary">Siguiente</button>
         	</div>
         </div>
 	</div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../enunciados/c1e12.json"></script>
     <script>
