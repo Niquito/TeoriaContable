@@ -21,7 +21,7 @@
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Ejercicio 1.14</a>
+                        <a class="nav-link active" href="#">Ejercicio 1.12</a>
                     </li>
                 </li>
                 <li class="nav-item">
@@ -36,7 +36,7 @@
     	<div class="row">
     		<div class="col text-center">
     			<br>
-        		<table class="table table-bordered table-striped">
+        		<table class="table table-bordered table-striped table-responsive-sm table-sm">
         		<thead class="text-center">
         			<tr>
                         <th rowspan="2">Recursos utilizados en</th>
@@ -49,7 +49,7 @@
         				<td>Gubernamental</td>
         			</tr>
         		</thead>
-        		<tbody class="casos" name="fade" is="transition-group">
+        		<tbody class="casos">
                     <tr v-for="caso in casos">
                         <td>{{caso.descripcion}}</td>
                         <td><input type="checkbox" v-bind:data-respuesta="caso.socioAmbiental"></td>
@@ -59,7 +59,7 @@
                     </tr>
         		</tbody>
         		</table>
-        		<button type="button" name="button" @click="siguienteCaso" class="btn btn-outline-primary">Siguiente</button>
+        		<button type="button" name="button" @click="siguienteCaso" class="btn btn-outline-primary">Agregar caso</button>
         	</div>
         </div>
 	</div>
