@@ -19,5 +19,4 @@ enunciados = [
 	{ "descripcion":"Se cobra en efectivo la venta realizada en cuenta corriente", "acto": "true", "reflejado": "true"},
 	{ "descripcion":"Se coloca una orden de compra por mercadería para su reventa", "acto": "false", "reflejado": "false"},
 	{ "descripcion":"Se retira dinero del banco para hacer pagos menores", "acto": "true", "reflejado": "true"}
-	
 ];

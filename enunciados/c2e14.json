@@ -1,0 +1,13 @@
+enunciados = [
+	{ "descripcion":"Aporte de los socios en dinero para iniciar la actividad comercial del ente", "activo":"true", "pasivo": "false", "pneto":"true"},
+	{ "descripcion":"Depósito del dinero en un banco", "activo":"true", "pasivo": "false", "pneto":"false"},
+	{ "descripcion":"Compra de mercadería a crédito", "activo":"true", "pasivo": "true", "pneto":"false"},
+	{ "descripcion":"Venta de mercadería a crédito a un mayor valor que el comprado", "activo":"true", "pasivo": "false", "pneto":"true"},
+	{ "descripcion":"Documentamos la deuda con el proveedor", "activo":"false", "pasivo": "true", "pneto":"false"},
+	{ "descripcion":"Pago de nuestra deuda con el proveedor", "activo":"true", "pasivo": "true", "pneto":"false"},
+	{ "descripcion":"Nuestro cliente documenta su deuda", "activo":"true", "pasivo": "false", "pneto":"false"},
+	{ "descripcion":"Cobramos a nuestro cliente el importa que nos adeuda", "activo":"true", "pasivo": "false", "pneto":"false"},
+	{ "descripcion":"Se reconocen deudas por servicios prestados que se abonarán dentro de 30 días", "activo":"false", "pasivo": "true", "pneto":"true"},
+	{ "descripcion":"Se abona la deuda del punto anterior", "activo":"true", "pasivo": "true", "pneto":"false"},
+	{ "descripcion":"Los socios retiran utilidades en efectivo", "activo":"true", "pasivo": "false", "pneto":"true"}
+];

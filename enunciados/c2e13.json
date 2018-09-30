@@ -1,0 +1,16 @@
+enunciados = [
+	{ "descripcion":"Impuestos correspondientes al período en curso", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Venta de mercadería", "negativo":"false", "positivo": "true"},
+	{ "descripcion":"Sueldos del personal afectado a la gerencia de administración correspondientes al mes en curso", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Ventas realizadas al exterior durante el mes", "negativo":"false", "positivo": "true"},
+	{ "descripcion":"Intereses por financiación bancaria utilizada por la empresa en el mes en curso", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Robo de un vehículo utilizado en el reparto de bienes (sin seguro)", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Utilización del servicio de banda ancha del mes en curso", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Incendio de la fábrica cubierto parcialmente por el seguro", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Juicio laboral iniciado por un trabajador con posibilidad de un resultado adverso para el ente.", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Mayor valor en la cotización de la moneda extranjera que posee el ente.", "negativo":"false", "positivo": "true"},
+	{ "descripcion":"Disminución de la cotización de la moneda extranjera que posee la empresa.", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Intereses correspondiente a la financiación dada a un cliente por el mes de Marzo, cuando éste transcurrió", "negativo":"false", "positivo": "true"},
+	{ "descripcion":"Consumo del servicio de energía eléctrica del mes (no se recibió la factura)", "negativo":"true", "positivo": "false"},
+	{ "descripcion":"Honorarios profesionales del abogado de la empresa por servicios ya prestados", "negativo":"true", "positivo": "false"}
+];

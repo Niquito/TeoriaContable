@@ -20,11 +20,11 @@
         <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar">
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="nvbrDpdwnCap1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="nvbrDpdwnCap1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Cap 1
                     </a>
                     <div class="dropdown-menu" aria-labelledby="nvbrDpdwnCap1">
-                      <a class="dropdown-item" href="c1e12.html">Ej 12: Relaciones de la contabilidad</a>
+                      <a class="dropdown-item" href="ejercicios/c1e12.html">Ej 12: Relaciones de la contabilidad</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -32,15 +32,15 @@
                       Cap 2
                     </a>
                     <div class="dropdown-menu" aria-labelledby="nvbrDpdwnCap2">
-                      <a class="dropdown-item" href="c2e5.html">Ej 5: Actividades económicas</a>
-                      <a class="dropdown-item" href="c2e6.html">Ej 6: Bienes económicos</a>
-                      <a class="dropdown-item" href="c2e7.html">Ej 7: Recursos</a>
+                      <a class="dropdown-item" href="ejercicios/c2e5.html">Ej 5: Actividades económicas</a>
+                      <a class="dropdown-item" href="ejercicios/c2e6.html">Ej 6: Bienes económicos</a>
+                      <a class="dropdown-item" href="ejercicios/c2e7.html">Ej 7: Recursos</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="c2e10.html">Ej 10: Fuentes de financiación</a>
-                      <a class="dropdown-item" href="c2e11.html">Ej 11: Fuentes de financiación</a>
-                      <a class="dropdown-item" href="c2e12.html">Ej 12: Costos</a>
-                      <a class="dropdown-item" href="c2e13.html">Ej 13: Resultados</a>
-                      <a class="dropdown-item" href="c2e14.html">Ej 14: Igualdad contable básica</a>
+                      <a class="dropdown-item" href="ejercicios/c2e10.html">Ej 10: Fuentes de financiación</a>
+                      <a class="dropdown-item" href="ejercicios/c2e11.html">Ej 11: Fuentes de financiación</a>
+                      <a class="dropdown-item" href="ejercicios/c2e12.html">Ej 12: Costos</a>
+                      <a class="dropdown-item" href="ejercicios/c2e13.html">Ej 13: Resultados</a>
+                      <a class="dropdown-item" href="ejercicios/c2e14.html">Ej 14: Igualdad contable básica</a>
                     </div>
                   </li>
             </ul>
@@ -53,23 +53,16 @@
         		<table class="table table-bordered table-striped table-responsive-sm table-sm">
         		<thead class="text-center">
         			<tr>
-                        <th rowspan="2">Recursos utilizados en</th>
-                        <th colspan="4" class="text-center">Interesa a la contabilidad</th>
-        			</tr>
-        			<tr>
-        				<td>Socio-ambiental</td>
-        				<td>Financiera o Patrimonial</td>
-        				<td>Gestión</td>
-        				<td>Gubernamental</td>
+        				<th>Tipo de bien</th>
+        				<th>Comentario</th>
+        				<th>Es un bien económico para el ente</th>
         			</tr>
         		</thead>
         		<tbody class="casos">
                     <tr v-for="caso in casos">
+                        <td>{{caso.tipoBien}}</td>
                         <td>{{caso.descripcion}}</td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.socioAmbiental"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.financiera"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.gestion"></td>
-                        <td><input type="checkbox" v-bind:data-respuesta="caso.gubernamental"></td>
+                        <td><input type="checkbox" v-bind:data-respuesta="caso.esBienEconomico"></td>
                     </tr>
         		</tbody>
         		</table>
@@ -81,7 +74,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="../enunciados/c1e12.json"></script>
+    <script src="../enunciados/c2e6.json"></script>
     <script>
 
     	function generarCasoRandom(){

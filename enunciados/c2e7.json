@@ -1,0 +1,7 @@
+enunciados = [
+	{ "descripcion":"Inmueble de propiedad de la organización, donde se llevan a cabo las actividades de comercialización", "rapidaMovilidad":"false", "caracterPermanente": "true"},
+	{ "descripcion":"Divisas en poder de la organización, a emplear como medio de pago.", "rapidaMovilidad":"true", "caracterPermanente": "false"},
+	{ "descripcion":"Deuda documentada, firmada por un cliente, con vencimiento a 30 días", "rapidaMovilidad":"true", "caracterPermanente": "false"},
+	{ "descripcion":"Derechos exclusivos, por cinco años, para fabricar los artículos que comercializa la organización", "rapidaMovilidad":"false", "caracterPermanente": "true"},
+	{ "descripcion":"Materia prima utilizada en el proceso productivo, donde el ciclo finaliza a los 7 días", "rapidaMovilidad":"true", "caracterPermanente": "false"}
+];
