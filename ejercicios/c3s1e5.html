@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title></title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/css/common.css">
+</head>
+<body>
+	<nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
+        <div id="tituloPagina">
+            <a href="../index.html" class="navbar-brand mr-0">Teoría contable - Beta</a>
+            <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="nvbrDpdwnCap1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cap 1
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="nvbrDpdwnCap1">
+                      <a class="dropdown-item" href="c1e12.html">Ej 12: Relaciones de la contabilidad</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="nvbrDpdwnCap2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cap 2
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="nvbrDpdwnCap2">
+                      <a class="dropdown-item" href="c2e5.html">Ej 5: Actividades económicas</a>
+                      <a class="dropdown-item" href="c2e6.html">Ej 6: Bienes económicos</a>
+                      <a class="dropdown-item" href="c2e7.html">Ej 7: Recursos</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="c2e10.html">Ej 10: Fuentes de financiación</a>
+                      <a class="dropdown-item" href="c2e11.html">Ej 11: Fuentes de financiación</a>
+                      <a class="dropdown-item" href="c2e12.html">Ej 12: Costos</a>
+                      <a class="dropdown-item" href="c2e13.html">Ej 13: Resultados</a>
+                      <a class="dropdown-item" href="c2e14.html">Ej 14: Igualdad contable básica</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="nvbrDpdwnCap2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cap 3
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="nvbrDpdwnCap2">
+                        <h6 class="dropdown-header">Comprobantes comerciales</h6>
+                      <a class="dropdown-item" href="#" disabled><em>Ej 4: Ver libro</em></a>
+                      <a class="dropdown-item" href="c3s1e5.html">Ej 5: Régimen impositivo vigente</a>
+                      <a class="dropdown-item" href="c3s1e6.html">Ej 6: Clasificación</a>
+                      <div class="dropdown-divider"></div>
+                      <h6 class="dropdown-header">Variaciones Patrimoniales</h6>
+                      <a class="dropdown-item" href="c3s2e4.html">Ej 4: Devengados</a>
+                      <a class="dropdown-item" href="c3s2e6.html">Ej 6: Costos de incorporación</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="app" class="container-fluid">
+    	<div class="row">
+    		<div class="col text-center">
+                <br>
+                <p><em>Nota: Las respuestas son escritas y completas. Si la respuesta es "Factura A", hay que escribir "Factura A" completo (para no mal-acostumbrarnos a ingresar cualquier otra cosa de cara al exámen)</em></p>
+    			<br>
+        		<table class="table table-bordered table-striped table-responsive-sm table-sm">
+        		<thead class="text-center">
+        			<tr>
+        				<th>Emisor de la factura</th>
+        				<th>Receptor de la factura</th>
+        				<th>Tipo de comprobante</th>
+        			</tr>
+        		</thead>
+        		<tbody class="casos">
+                    <tr v-for="caso in casos">
+                        <td>{{caso.emisor}}</td>
+                        <td>{{caso.receptor}}</td>
+                        <td><input type="text" v-bind:data-respuesta="caso.tipoComprobante"></td>
+                    </tr>
+        		</tbody>
+        		</table>
+        		<button type="button" name="button" @click="siguienteCaso" class="btn btn-outline-primary">Agregar caso</button>
+        	</div>
+        </div>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../enunciados/c3s1e5.json"></script>
+    <script src="../src/js/casosAleatorios.js"></script>
+</body>
+</html>

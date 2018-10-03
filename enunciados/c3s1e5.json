@@ -1,0 +1,9 @@
+enunciados = [
+	{ "emisor":"Responsable inscripto", "receptor":"Responsable inscripto", "tipoComprobante": "Factura A"},
+	{ "emisor":"Exento", "receptor":"Responsable inscripto", "tipoComprobante": "Factura C"},
+	{ "emisor":"Exento", "receptor":"Consumidor final", "tipoComprobante": "Factura C"},
+	{ "emisor":"Responsable inscripto", "receptor":"Consumidor final", "tipoComprobante": "Factura B"},
+	{ "emisor":"Monotributista", "receptor":"Responsable inscripto", "tipoComprobante": "Factura C"},
+	{ "emisor":"Responsable inscripto", "receptor":"Monotributista", "tipoComprobante": "Factura B"},
+	{ "emisor":"Responsable inscripto", "receptor":"Exento", "tipoComprobante": "Factura B"}
+];
