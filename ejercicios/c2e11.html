@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../src/css/common.css">
 </head>
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
         <div id="tituloPagina">
-            <a href="../index.html" class="navbar-brand mr-0">Teoría contable</a>
+            <a href="../index.html" class="navbar-brand mr-0">Teoría contable - Beta</a>
             <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,56 +79,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="../enunciados/c2e11.json"></script>
-    <script>
-
-        function generarCasoRandom(){
-
-            var obj_keys = Object.keys(enunciados);
-            var k =  obj_keys[Math.floor(Math.random() *obj_keys.length)];
-            return enunciados[k];
-
-        }
-
-        new Vue({
-          el: '#app',
-          data () {
-                return {
-                  i:0,
-                  descripcion:'',
-                  casos: []
-                }
-              },
-              methods:{
-                siguienteCaso(){
-
-                    var error = false;
-                    var inputs = document.getElementsByTagName('input');
-                    for(var i = 0; i < inputs.length; i++) {
-                        if (inputs[i].checked.toString() != inputs[i].dataset.respuesta){
-                            error = true;
-                        }
-                    }
-
-                    if (!error){
-                        const caso = generarCasoRandom();
-                        this.i++;
-                        this.casos.push(caso);
-                    } else {
-                        var tabla = document.getElementsByTagName('table');//
-                        tabla[0].classList.add("animar-error");
-
-                        tabla[0].addEventListener("animationend", (e) => {
-                            tabla[0].classList.remove("animar-error");
-                        });
-                    }
-                    error = false;
-                },
-                removerCaso(caso) {
-                    this.casos.splice(this.casos.indexOf(caso),1);
-                    this.i--;
-                }
-              }
-        })
-    </script>
+    <script src="../src/js/casosAleatorios.js"></script>
 </body>
 </html>
