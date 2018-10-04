@@ -51,3 +51,18 @@ th {
 .animar-error {
     animation: sacudir 0.82s cubic-bezier(.36,.07,.19,.97) both;
 }
+
+.texto-escondido {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.moneda {
+   text-align: right;
+   width: 100%;
+}
+
+.moneda:before {
+   content: "$";
+   float: left;
+}
