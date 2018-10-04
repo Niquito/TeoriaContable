@@ -75,7 +75,7 @@
         				<th>Tipo de comprobante</th>
         			</tr>
         		</thead>
-        		<tbody class="casos">
+        		<tbody class="casos" id="cuerpoTabla">
                     <tr v-for="caso in casos">
                         <td>{{caso.emisor}}</td>
                         <td>{{caso.receptor}}</td>
@@ -93,6 +93,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="../enunciados/c3s1e5.json"></script>
     <script src="../src/js/casosAleatorios_texto.js"></script>
-    
+
 </body>
 </html>

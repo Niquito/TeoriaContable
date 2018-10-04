@@ -46,3 +46,5 @@ new Vue({
         }
       }
 })
+
+document.getElementById('cuerpoTabla').style.display = '';

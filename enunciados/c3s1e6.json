@@ -1,0 +1,10 @@
+enunciados = [
+	{ "descripcion":"Recibo duplicado", "origenExterno":"false", "origenInternoUsoInterno": "false", "origenInternoUsoExterno": "true"},
+	{ "descripcion":"Orden de compra", "origenExterno":"false", "origenInternoUsoInterno": "false", "origenInternoUsoExterno": "true"},
+	{ "descripcion":"Informe de recepción", "origenExterno":"false", "origenInternoUsoInterno": "true", "origenInternoUsoExterno": "false"},
+	{ "descripcion":"Factura original", "origenExterno":"true", "origenInternoUsoInterno": "false", "origenInternoUsoExterno": "false"},
+	{ "descripcion":"Orden de pago", "origenExterno":"false", "origenInternoUsoInterno": "true", "origenInternoUsoExterno": "false"},
+	{ "descripcion":"Nota de crédito bancaria", "origenExterno":"true", "origenInternoUsoInterno": "false", "origenInternoUsoExterno": "false"},
+	{ "descripcion":"Carta de porte original", "origenExterno":"true", "origenInternoUsoInterno": "false", "origenInternoUsoExterno": "false"},
+	{ "descripcion":"Solicitud de materiales", "origenExterno":"false", "origenInternoUsoInterno": "true", "origenInternoUsoExterno": "false"}
+];

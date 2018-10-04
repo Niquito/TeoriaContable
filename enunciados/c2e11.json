@@ -6,7 +6,7 @@ enunciados = [
 	{ "descripcion":"Préstamos reibidos de un banco", "recurso":"false", "financiacionAjena": "true", "financiacionPropia":"false", "otro":"false"},
 	{ "descripcion":"Máquina utilizada para cortar la tela para confeccionar camisas.", "recurso":"true", "financiacionAjena": "false", "financiacionPropia":"false", "otro":"false"},
 	{ "descripcion":"Modes para el diseño de las camisas", "recurso":"true", "financiacionAjena": "false", "financiacionPropia":"false", "otro":"false"},
-	{ "descripcion":"Préstamo recibido de un soscio", "recurso":"false", "financiacionAjena": "true", "financiacionPropia":"false", "otro":"false"},
+	{ "descripcion":"Préstamo recibido de un socio", "recurso":"false", "financiacionAjena": "true", "financiacionPropia":"false", "otro":"false"},
 	{ "descripcion":"Vehículo utilizado por los vendedores", "recurso":"true", "financiacionAjena": "false", "financiacionPropia":"false", "otro":"false"},
 	{ "descripcion":"Sueldos impagos al personal.", "recurso":"false", "financiacionAjena": "true", "financiacionPropia":"false", "otro":"false"},
 	{ "descripcion":"Aportes de los socios para futuros aumentos de capital", "recurso":"false", "financiacionAjena": "false", "financiacionPropia":"true", "otro":"false"},
