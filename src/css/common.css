@@ -66,3 +66,7 @@ th {
    content: "$";
    float: left;
 }
+
+#cuerpoTabla {
+  display: hidden;
+}

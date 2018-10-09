@@ -73,7 +73,7 @@
         				<th>De carácter permanente</th>
         			</tr>
         		</thead>
-        		<tbody class="casos" id="cuerpoTabla" style="display: hidden;">
+        		<tbody class="casos" id="cuerpoTabla">
                     <tr v-for="caso in casos">
                         <td>{{caso.descripcion}}</td>
                         <td><input type="checkbox" v-bind:data-respuesta="caso.rapidaMovilidad"></td>
