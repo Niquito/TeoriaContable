@@ -76,7 +76,7 @@
                         <th>Patrimonio Neto</th>
                     </tr>
                 </thead>
-                <tbody class="casos" id="cuerpoTabla" hidden>
+                <tbody class="casos" id="cuerpoTabla" style="display: hidden;">
                     <tr v-for="caso in casos">
                         <td>{{caso.descripcion}}</td>
                         <td><input type="checkbox" v-bind:data-respuesta="caso.activo"></td>
