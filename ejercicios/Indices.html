@@ -87,7 +87,7 @@
                 <td class="text-center">20X3</td>
               </tr>
               <tr class="font-weight-bold">
-                <td colspan="4">Activo Corriente</td>
+                <td colspan="4">ACTIVO CORRIENTE</td>
               </tr>
               <tr>
                 <td>Caja y Bancos</td>
@@ -103,11 +103,11 @@
               </tr>
               <tr>
                 <td>Bienes de Cambio</td>
-                <td class="text-right">22.000</td>
-                <td class="text-right">26.000</td>
+                <td class="text-right" id="bienesDeCambioInicial">22.000</td>
+                <td class="text-right" id="bienesDeCambio">26.000</td>
                 <td class="text-right">17.640</td>
               </tr>
-              <tr>
+              <tr class="font-weight-bold">
                 <td>Total Activo Corriente</td>
                 <td class="text-right">60.000</td>
                 <td class="text-right" id="totalActivoCorriente">63.000</td>
@@ -126,7 +126,7 @@
                 <td class="text-right">22.200</td>
                 <td class="text-right">24.000</td>
               </tr>
-              <tr>
+              <tr class="font-weight-bold">
                 <td>Total Activo no Corriente</td>
                 <td class="text-right">101.000</td>
                 <td class="text-right">112.200</td>
@@ -148,7 +148,7 @@
                 <td class="text-right">20.000</td>
                 <td class="text-right">9.030</td>
               </tr>
-              <tr>
+              <tr class="font-weight-bold">
                 <td>Total Pasivo Corriente</td>
                 <td class="text-right">15.000</td>
                 <td class="text-right" id="totalPasivoCorriente">20.000</td>
@@ -208,12 +208,12 @@
             <tbody>
              <tr>
                <td>Ventas</td>
-               <td id="cantVentas20X2" class="text-right">250.000</td>
+               <td class="text-right" id="cantVentas20X2" >250.000</td>
                <td class="text-right">270.000</td>
              </tr>
              <tr>
                <td>Costo de Ventas</td>
-               <td class="text-right">-120.000</td>
+               <td class="text-right" id="cmv">-120.000</td>
                <td class="text-right">-125.000</td>
              </tr>
              <tr class="borderFila table-secondary">
@@ -233,7 +233,7 @@
              </tr>
              <tr>
                <td>Resultados financieros generados por pasivos</td>
-               <td class="text-right">-20.400</td>
+               <td class="text-right" id="gastosResultadosFinancieros">-20.400</td>
                <td class="text-right">-10.000</td>
              </tr>
              <tr class="borderFila table-secondary">
@@ -246,19 +246,19 @@
       </div>
       <div class="row">
         <table>
-          <tr>
+          <tr id="porcCostProd">
             <td>Costos de Producción</td>
             <td>30%</td>
           </tr>
-          <tr>
+          <tr id="porcGastCom">
             <td>Gastos de Comercialización</td>
             <td>60%</td>
           </tr>
-          <tr>
+          <tr id="porcGastAdm">
             <td>Gastos de Administración</td>
             <td>100%</td>
           </tr>
-          <tr>
+          <tr id="porcResFin">
             <td>Resultados Financieros</td>
             <td>100%</td>
           </tr>
@@ -277,10 +277,10 @@
             <tr><td id="rentabilidadPatrimonioNeto"><a href="javascript:void(0);" onclick="rentabilidadPatrimonioNeto();">Rentabilidad del Patrimonio Neto</a></td></tr>
             <tr><td>Palanca Financiera</td></tr>
             <tr><td>Punto de Equilibrio (en monto de Ventas)</td></tr>
-            <tr><td>Costos fijos Totales</td></tr>
+            <tr><td id="costosFijos"><a href="javascript:void(0);" onclick="costosFijos();">Costos fijos Totales</a></td></tr>
             <tr><td>Margen de contribución</td></tr>
             <tr><td id="liquidezCorriente"><a href="javascript:void(0);" onclick="liquidezCorriente();">Liquidez corriente disponible</a></td></tr>
-            <tr><td>Liquidez seca o prueba ácida</td></tr>
+            <tr><td id="liquidezSeca"><a href="javascript:void(0);" onclick="liquidezSeca();">Liquidez seca o prueba ácida</a></td></tr>
             <tr><td id="endeudamiento"><a href="javascript:void(0);" onclick="endeudamiento();">Endeudamiento</a></td></tr>
           </tbody>
         </table>
@@ -405,6 +405,77 @@
           intro.start();
       }
 
+      function costosFijos(){
+        var intro = introJs();
+          intro.setOptions({
+            showBullets: false,
+            nextLabel: ">",
+            prevLabel: "<",
+            skipLabel: "Saltar",
+            doneLabel: "Fin",
+            steps: [
+              {
+                element: "#costosFijos",
+                intro: "Para calcular los costos fijos totales hay que sumar los costos de producción + todos los gastos de la empresa."
+              },
+              {
+                element: "#costosFijos",
+                intro: "Antes que nada, hay que calcular los costos de producción, y se hace de la siguiente manera: <br> <i><b>(CMV + EF(bs cambio) - EI(bs cambio))* %Costos.</b></i>"
+              },
+              {
+                element: "#cmv",
+                intro: "<i>(<b>CMV</b> + EF(bs cambio) - EI(bs cambio))* %Costos.</i><br> El CMV lo tenés como dato, y ya lo podés reemplazar en la ecuación. <br><i>(<b>120.000</b> + EF(bs cambio) - EI(bs cambio))* %Costos.</i>"
+              },
+              {
+                element: "#bienesDeCambio",
+                intro: "<i>(120.000 + <b>EF(bs cambio)</b> - EI(bs cambio))* %Costos</i>.<br> La Existencia Final de bienes de cambio, en realidad son los bienes de cambio al cierre del ejercicio que estás evaluando <br><i>(120.000 + <b>26.000</b> - EI(bs cambio))* %Costos</i>."
+              },
+              {
+                element: "#bienesDeCambioInicial",
+                intro: "<i>(120.000 + 26.000 - <b>EI(bs cambio)</b>)* %Costos</i>.<br> La Existencia Inicial de bienes de cambio son los del cierre del ejercicio anterior. <br><i>(120.000 + 26.000 - <b>22.000</b>)* %Costos</i>."
+              },
+              {
+                element: "#porcCostProd",
+                intro: "<i>(120.000 + 26.000 - 22.000) * <b>%Costos</b></i>.<br> Por último, no te olvides de multiplicar el resultado por el porcentaje que te dan de la estructura de costos. <br><i>(120.000 + 26.000 - 22.000) * <b>30%</b></i> = 37.200."
+              },
+              {
+                element: "#porcCostProd",
+                intro: "Hasta acá, calculamos los costos de producción totales, pero falta sumarle un par de cosas."
+              },
+              {
+                element: "#gastosComercializacion",
+                intro: "Los gastos de comercialización..."
+              },
+              {
+                element: "#porcGastCom",
+                intro: "... multiplicados por el porcentaje de la estructura de costos. <br><i>40.000 * 60% = 24.000</i>"
+              },
+              {
+                element: "#gastosAdministracion",
+                intro: "Más los gastos de administración..."
+              },
+              {
+                element: "#porcGastAdm",
+                intro: "... también multiplicados por el porcentaje de la estructura de costos. <br><i>65.000 * 100% = 65.000</i>"
+              },
+              {
+                element: "#gastosResultadosFinancieros",
+                intro: "Más los gastos financieros..."
+              },
+              {
+                element: "#porcResFin",
+                intro: "¡Adiviná! ¡También multiplicados por los porcentajes de la estructura de costos! <br><i>20.400 * 100% = 20.400</i>"
+              },
+              {
+                element: "#porcResFin",
+                intro: "Ahora si podés sumar todo y tener los Costos Fijos Totales: <br><i>37.200 + 24.000 + 65.000 + 20.400 = 146.600</i>"
+              }
+            ]
+          });
+
+          intro.start();
+      }
+
       function liquidezCorriente(){
           var intro = introJs();
           intro.setOptions({
@@ -433,6 +504,41 @@
               {
                 element: "#totalPasivoCorriente",
                 intro: 'El índice de Liquidez Corriente se evalúa de la siguiente manera: <ul><li>I < 1 = Insuficiente o débil</li><li> 1 < I < 1,20 = Normal o ajustado </li><li>1,20 < I < 1,50 = Bueno</li><li> 1,5 < I = Holgado</li></ul>'
+              }
+            ]
+          });
+
+          intro.start();
+      }
+
+      function liquidezSeca(){
+          var intro = introJs();
+          intro.setOptions({
+            showBullets: false,
+            nextLabel: ">",
+            prevLabel: "<",
+            skipLabel: "Saltar",
+            doneLabel: "Fin",
+            steps: [
+              {
+                element: "#liquidezSeca",
+                intro: "Es igual al índice de Liquidez Corriente, sólo que no se tienen en cuenta los bienes de cambio. Por ende, tenés que hacer:"
+              },
+              {
+                element: "#totalActivoCorriente",
+                intro: "El total del Activo Corriente."
+              },
+              {
+                element: "#bienesDeCambio",
+                intro: "Menos los Bienes de cambio."
+              },
+              {
+                element: "#totalPasivoCorriente",
+                intro: "Sobre el total del pasivo corriente."
+              },
+              {
+                element: "#totalPasivoCorriente",
+                intro: "Y te quedaría así: 63.000 / 20.000 = 3,15."
               }
             ]
           });
