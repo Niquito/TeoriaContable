@@ -110,7 +110,7 @@
               <tr>
                 <td>Total Activo Corriente</td>
                 <td class="text-right">60.000</td>
-                <td class="text-right">63.000</td>
+                <td class="text-right" id="totalActivoCorriente">63.000</td>
                 <td class="text-right">61.245</td>
               </tr>
               <tr class="font-weight-bold"><td colspan="4">ACTIVO NO CORRIENTE</td></tr>
@@ -143,7 +143,7 @@
               </tr>
               <tr class="font-weight-bold"><td colspan="4">PASIVO CORRIENTE</td></tr>
               <tr>
-                <td>Deucas Comerciales</td>
+                <td>Deudas Comerciales</td>
                 <td class="text-right">15.000</td>
                 <td class="text-right">20.000</td>
                 <td class="text-right">9.030</td>
@@ -151,7 +151,7 @@
               <tr>
                 <td>Total Pasivo Corriente</td>
                 <td class="text-right">15.000</td>
-                <td class="text-right">20.000</td>
+                <td class="text-right" id="totalPasivoCorriente">20.000</td>
                 <td class="text-right">9.030</td>
               </tr>
               <tr class="font-weight-bold">
@@ -277,9 +277,9 @@
             <tr><td id="rentabilidadPatrimonioNeto"><a href="javascript:void(0);" onclick="rentabilidadPatrimonioNeto();">Rentabilidad del Patrimonio Neto</a></td></tr>
             <tr><td>Palanca Financiera</td></tr>
             <tr><td>Punto de Equilibrio (en monto de Ventas)</td></tr>
-            <tr><td data-step="2" data-intro="data hint">Costos fijos Totales</td></tr>
+            <tr><td>Costos fijos Totales</td></tr>
             <tr><td>Margen de contribución</td></tr>
-            <tr><td data-step="3" data-intro="data intro">Liquidez corriente disponible</td></tr>
+            <tr><td id="liquidezCorriente"><a href="javascript:void(0);" onclick="liquidezCorriente();">Liquidez corriente disponible</a></td></tr>
             <tr><td>Liquidez seca o prueba ácida</td></tr>
             <tr><td id="endeudamiento"><a href="javascript:void(0);" onclick="endeudamiento();">Endeudamiento</a></td></tr>
           </tbody>
@@ -405,6 +405,41 @@
           intro.start();
       }
 
+      function liquidezCorriente(){
+          var intro = introJs();
+          intro.setOptions({
+            showBullets: false,
+            nextLabel: ">",
+            prevLabel: "<",
+            skipLabel: "Saltar",
+            doneLabel: "Fin",
+            steps: [
+              {
+                element: "#liquidezCorriente",
+                intro: "Es la capacidad del Ente al momento de cancelar los compromisos en el corto plazo, y se calcula dividiendo..."
+              },
+              {
+                element: "#totalActivoCorriente",
+                intro: "El total del Activo Corriente."
+              },
+              {
+                element: "#totalPasivoCorriente",
+                intro: "Sobre el total del pasivo corriente."
+              },
+              {
+                element: "#totalPasivoCorriente",
+                intro: "Y te quedaría así: 63.000 / 20.000 = 3,15."
+              },
+              {
+                element: "#totalPasivoCorriente",
+                intro: 'El índice de Liquidez Corriente se evalúa de la siguiente manera: <ul><li>I < 1 = Insuficiente o débil</li><li> 1 < I < 1,20 = Normal o ajustado </li><li>1,20 < I < 1,50 = Bueno</li><li> 1,5 < I = Holgado</li></ul>'
+              }
+            ]
+          });
+
+          intro.start();
+      }
+
       function endeudamiento(){
         var intro = introJs();
           intro.setOptions({
@@ -432,7 +467,7 @@
               },
               {
                 element: "#patrimonioNeto",
-                intro: 'Tengo que ver cómo se interpreta ése índice :( PROXIMAMENTE!'
+                intro: 'El índice de endeudamiento se evalúa de la siguiente manera: <ul><li>I < 1 = Bajo (y es algo bueno)</li><li> 1 = I = Normal o ajustado </li><li>1 < I < 1,50 = Alto endeudamiento</li><li> 1,5 < I = Muy elevado (Debilidad financiera)</li></ul>'
               }
             ]
           });
